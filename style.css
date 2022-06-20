@@ -1,0 +1,130 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color:rgba(41, 214, 211,0.2);
+    font-family:'Roboto';
+}
+li{
+    list-style:none;
+}
+header {
+    height:60px;
+    background-color:rgba(0,0,0,0.8);
+    color: lightgrey;
+    overflow:auto;
+}
+header .header-logo {
+    font-size:30px;
+    padding: 10px 30px;
+    float:left;
+}
+header .header-list ul li {
+    float:right;
+    padding: 20px 20px;
+    display:hidden;
+}
+header .header-list ul li:hover{
+    color:white;
+}
+#home section{
+    padding:50px;
+}
+.card {
+    width:80%;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-right:auto;
+    margin-left:auto;
+    background-color:white;
+    overflow:hidden;
+    text-align:center;
+}
+.card h3{
+    font-size:40px;
+    font-weight:semi-bold;
+    margin:20px 0;
+}
+.desc{
+    font-size:20px;
+    opacity:0.8;
+    margin:20px 0;
+    padding:0 40px;
+}
+.card form {
+    margin:40px 0;
+}
+input {
+    padding:12px 20px;
+    font-size:24px;
+    border:1px solid #ccc;
+}
+input[type = text]{
+    width:60%;
+    border-radius: 4px;
+}
+input[type = submit]{
+    margin-left:-5px;
+    border-radius: 0 8px 8px 0;
+    background-color: #4CAF50;
+    color:white;
+}
+input[type = submit]:hover{
+    background-color: #45a049;
+}
+.note {
+    padding:0 40px;
+    font-size:16px;
+}
+.result{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.result-card{
+    margin:0 16px 24px 0;
+    border-radius: 0.375rem;
+    background-color:white;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.result-card h3{
+    margin:12px;
+    font-size:18px;
+}
+.result-card p{
+    text-align: right;
+    margin: 12px 12px 6px 0;
+}
+
+@media screen and (max-width:650px){
+    header{
+        height:40px;
+    }
+    header .header-logo{
+        font-size:20px;
+    }
+    header .header-list li{
+        display:none;
+    }
+    .card{
+        margin-top:5px;
+    }
+    .card h3{
+        font-size:20px;
+    }
+    .desc{
+        font-size:15px;
+        margin-bottom:10px;
+    }
+    input{
+        padding:8px 12px;
+        font-size:12px;
+    }
+    .note{
+        margin-bottom:5px;
+        font-size:12px;   
+    }
+}
