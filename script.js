@@ -1,7 +1,5 @@
 let dataIllegal = [];
 let search_Data = [];
-const dataProduct = [];
-const dataApps = [];
 const RENDER_DATA = "render-data";
 
 async function getDataIllegal(){
@@ -17,6 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             dataIllegal = response.data.illegals.map((data)=>{
                 return data;
             })
+            //console.log(response.data.illegals);
         }
     );
 
@@ -31,19 +30,39 @@ document.addEventListener(RENDER_DATA, () => {
 function createResultElement(dataObject){
     const card = document.createElement('div');
     card.classList.add('result-card');
+    const content = document.createElement('div');
+    content.classList.add('card-content');
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('card-image');
+    const image = document.createElement('img');
+    image.src = "image/building1.png";
+    image.alt = "icon building";
+    const txtContainer = document.createElement('div');
+    txtContainer.classList.add('card-txt-content');
     const office_name = document.createElement('h3');
     office_name.innerText = dataObject.name;
-    const desc = document.createElement('p');
-    desc.innerText = dataObject.address;
-    card.append(office_name,desc);
+    const alias = document.createElement('h4');
+    alias.innerText = (dataObject.alias.length > 0) ? `(${dataObject.alias[0]})` : "Tidak ada";
+    const tipe = document.createElement('p');
+    tipe.innerText = (dataObject.type !== "") ? dataObject.type : "Tidak diketahui";
+    const footer = document.createElement('div');
+    footer.classList.add("card-footer");
+    const address = document.createElement('p');
+    address.innerText = (dataObject.address !== "") ? dataObject.address : "Tidak diketahui";
+    imageContainer.append(image);
+    txtContainer.append(office_name,alias,tipe);
+    content.append(imageContainer,txtContainer);
+    footer.append(address);
+    card.append(content,footer);
     return card;
 }
 function searchData(){
-    const search_name = document.getElementsByClassName('input-name').value;
+    const search_name = document.getElementById('input-name').value;
     const regex = new RegExp(search_name,'i');
+    console.log(regex);
     search_Data = [];
     search_Data = dataIllegal.filter((data) => {
-        console.log(data.name);
+        console.log(regex.test(data.name));
         return regex.test(data.name);
     });
     document.dispatchEvent(new Event(RENDER_DATA));
