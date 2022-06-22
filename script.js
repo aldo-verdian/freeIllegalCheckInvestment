@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             dataIllegal = response.data.illegals.map((data)=>{
                 return data;
             })
-            //console.log(response.data.illegals);
         }
     );
 
@@ -59,7 +58,6 @@ function createResultElement(dataObject){
 function searchData(){
     const search_name = document.getElementById('input-name').value;
     const regex = new RegExp(search_name,'i');
-    console.log(regex);
     search_Data = [];
     search_Data = dataIllegal.filter((data) => {
         console.log(regex.test(data.name));
@@ -70,7 +68,6 @@ function searchData(){
 function show(arrayData){
     const result = document.getElementById('result');
     result.innerHTML = "";
-
     for(let i=0; i<=arrayData.length;i++){
         const element = createResultElement(arrayData[i]);
         result.append(element);

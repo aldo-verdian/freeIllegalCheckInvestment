@@ -6,6 +6,9 @@ body{
     background-color:rgba(41, 214, 211,0.2);
     font-family:'Roboto';
 }
+main{
+    padding-bottom: 40px;
+}
 li{
     list-style:none;
 }
@@ -126,4 +129,108 @@ input[type = submit]:hover{
     text-align: right;
     margin: 12px 12px 6px 6px;
     color:#999999;
+}
+#grow2{
+    flex-grow: 2;
+}
+#grow3{
+    flex-grow: 3;
+}
+
+/* @media screen and (max-width:650px){
+    header{
+        height:40px;
+    }
+    header .header-logo{
+        font-size:20px;
+    }
+    header .header-list li{
+        display:none;
+    }
+    .card{
+        margin-top:5px;
+    }
+    .card h3{
+        font-size:20px;
+    }
+    .desc{
+        font-size:15px;
+        margin-bottom:10px;
+    }
+    input{
+        padding:8px 12px;
+        font-size:12px;
+    }
+    .note{
+        margin-bottom:5px;
+        font-size:12px;   
+    }
+} */
+
+@media screen and (max-width:420px){
+    header .header-list li{
+        display:none;
+    }
+    #home section{
+        padding:30px;
+    }
+    .card{
+        width:100%;
+    }
+    .card h3{
+        font-size:30px;
+        margin:20px 0;
+    }
+    .desc{
+        font-size:16px;
+    }
+    .card form {
+        margin:20px 0;
+    }
+    input {
+        padding:8px 14px;
+        font-size:16px;
+    }
+    input[type = text]{
+        width:80%;
+    }
+    input[type = submit]{
+        margin-top:6px;
+        border-radius: 8px;
+    }
+    .note {
+        font-size:14px;
+    }
+    .result-card{
+        margin:0 0 16px 0;
+        width: 100%;
+    }
+    .result-card .card-content{
+        padding: 0;
+    }
+    .result-card .card-content .card-image{
+        display: block;
+    }
+    .result-card .card-txt-content{
+        display: block;
+        margin-left: 10px;
+    }
+    .result-card .card-content .card-txt-content h3{
+        margin-top:8px;
+        font-size:14px;
+    }
+    .result-card .card-content .card-txt-content h4{
+        margin-top:12px;
+        font-size:14px;
+        font-weight: 400;
+    }
+    .result-card .card-content .card-txt-content p{
+        margin:12px 0 8px 0;
+        font-size:14px;
+    }
+    .result-card .card-footer p{
+        font-size:12px;
+        text-align: right;
+        margin: 10px 12px 6px 6px;
+    }
 }
